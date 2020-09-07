@@ -1,9 +1,6 @@
 // Define a promise library
 // It will replace the inbuilt promise library function that we often use while coding.
 
-
-
-
 /* Following on the same lines, we can define promise to be 
     function that can either be resolved or rejected
     1. A promise can be resolved or rejected
@@ -19,7 +16,8 @@ const state = {
 
 const isThenable = mayBePromise => mayBePromise && typeof mayBePromise.then === 'function';
 
-const logger = (methodName, stateValue) => console.log(`Method : ${methodName}, \t\t\tCurrent State Value : ${stateValue}`);
+const enableLogger = false;
+const logger = (methodName, stateValue) => enableLogger && console.log(`Method : ${methodName}, \t\t\tCurrent State Value : ${stateValue}`);
 
 class JSADPromise {
     constructor(computation) {
@@ -132,12 +130,5 @@ class JSADPromise {
 
 }
 
-const getFileData = _ => new JSADPromise((resolve, reject) => {
-    setTimeout(resolve(42), 1000);
-});
-
-getFileData()
-    .then(response => {
-        console.log('First Response : ', response);
-        return response + 1;
-    });
+module.exports = JSADPromise;
+// export default JSADPromise;
