@@ -13,9 +13,21 @@ getFileData()
 
 
 // Checking singleton Counter
-const singletonCounter = module.require('./jsPatterns/singleton'); 
+import singletonCounter from './jsPatterns/singleton'
+
 console.log(`
     Welcome to singleton Counter
     Initial Value of counter: ${singletonCounter.getCount()}
     Updating the value: ${singletonCounter.increment()}
 `)
+
+
+// checking proxy import 
+
+const personProxyWithValidation = require('./jsPatterns/proxy');
+
+personProxyWithValidation.nonExistanceProperty // throws error
+
+personProxyWithValidation.age = '44' // throws error
+
+personProxyWithValidation.name = '' // throws error
