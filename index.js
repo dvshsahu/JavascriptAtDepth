@@ -9,4 +9,14 @@ getFileData()
     .then(response => {
         console.log('First Response : ', response);
         return response + 1;
-    });
+});
+
+
+// Checking singleton Counter
+import singletonCounter from './jsPatterns/singleton'
+
+console.log(`
+    Welcome to singleton Counter
+    Initial Value of counter: ${singletonCounter.getCount()}
+    Updating the value: ${singletonCounter.increment()}
+`)
