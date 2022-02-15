@@ -17,7 +17,7 @@ class Counter {
     }
 
     increment() {
-        return ++counter;
+      return ++counter;
     }
 
     decrement() {
@@ -27,4 +27,4 @@ class Counter {
 
 
 const singletonCounter = Object.freeze(new Counter());
-export default singletonCounter;
+module.exports =  singletonCounter;

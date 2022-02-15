@@ -13,8 +13,7 @@ getFileData()
 
 
 // Checking singleton Counter
-import singletonCounter from './jsPatterns/singleton'
-
+const singletonCounter = module.require('./jsPatterns/singleton'); 
 console.log(`
     Welcome to singleton Counter
     Initial Value of counter: ${singletonCounter.getCount()}
